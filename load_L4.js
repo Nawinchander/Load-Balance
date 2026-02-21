@@ -33,3 +33,22 @@ const lb = net.createServer(clientSocket => {
 lb.listen(4000, () => {
   console.log("L4 Load Balancer running on port 4000");
 });
+
+
+
+
+///// dummy tcp layer for testing
+
+const net = require("net");
+
+function startServer(port) {
+  net.createServer(socket => {
+    socket.write(`Hello from TCP server ${port}\n`);
+    socket.end();
+  }).listen(port, () => {
+    console.log("TCP backend running on", port);
+  });
+}
+
+startServer(5001);
+startServer(5002);
