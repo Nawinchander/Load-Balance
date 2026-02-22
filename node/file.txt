@@ -1,0 +1,4 @@
+Weighted Round Robin
+Sticky Session Load Balancer
+Health-check auto removal
+Cluster-based CPU load balancing
