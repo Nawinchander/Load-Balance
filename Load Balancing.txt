@@ -1,0 +1,230 @@
+What is Load Balancing? (Small Definition)
+
+Load Balancing = distributing incoming requests across multiple servers to:
+
+improve scalability
+ensure high availability
+reduce latency
+
+👉 One-liner (interview):
+
+“Load balancing ensures no single server becomes a bottleneck by evenly distributing traffic.”
+
+⚙️ 2. Types of Load Balancers
+🔹 1. L4 Load Balancer (Transport Layer)
+Works on IP + Port
+Fast, no content inspection
+Example: TCP routing
+
+👉 One-liner:
+
+“Routes traffic based on network-level information.”
+
+🔹 2. L7 Load Balancer (Application Layer)
+Works on HTTP/HTTPS
+Can inspect:
+headers
+cookies
+URLs
+
+👉 One-liner:
+
+“Routes traffic based on application-level data.”
+
+🔁 3. Core Algorithms (VERY IMPORTANT)
+🔹 Round Robin
+Requests distributed sequentially
+
+👉 Use when:
+
+All servers have equal capacity
+
+👉 Problem:
+
+Doesn’t consider server load
+🔹 Least Connections
+Sends request to server with least active connections
+
+👉 Use when:
+
+Requests vary in processing time
+🔹 Weighted Load Balancing
+Servers get traffic based on capacity
+
+👉 Example:
+
+Server A = 2x power → gets 2x requests
+🔹 Consistent Hashing (FAANG MUST KNOW)
+Maps users → same server
+
+👉 Used in:
+
+caching (Redis)
+CDNs
+
+👉 Key benefit:
+
+Minimal re-distribution when scaling
+🧩 4. Important Concepts (FAANG Core)
+🔹 Health Checks
+Detect if server is alive
+
+👉 Types:
+
+Active (ping /health)
+Passive (detect failures)
+🔹 Failover
+Automatically switch to healthy servers
+
+👉 One-liner:
+
+“Ensures system continues even if some servers fail.”
+
+🔹 Sticky Sessions (Session Affinity)
+Same user → same server
+
+👉 Problem:
+
+Breaks load distribution
+Not scalable
+🔹 Auto Scaling
+Add/remove servers dynamically
+
+👉 Used in:
+
+cloud systems
+🔹 Reverse Proxy
+Load balancer sits between client & servers
+
+👉 Example:
+
+Client → LB → Backend
+🚀 5. FAANG-Level Concepts (Must Know)
+🔥 1. Consistent Hash Ring
+Virtual nodes improve distribution
+Avoids hotspots
+🔥 2. Circuit Breaker Pattern
+Stop sending traffic to failing service
+
+👉 States:
+
+Closed → normal
+Open → blocked
+Half-open → testing
+🔥 3. Rate Limiting + Load Balancing
+Prevent overload
+
+👉 Example:
+
+100 req/sec per user
+🔥 4. Geo-based Routing
+Route to nearest server
+
+👉 Used in:
+
+global apps (Netflix, Google)
+🔥 5. Service Discovery
+Dynamic server list
+
+👉 Tools:
+
+Consul
+etcd
+🧠 6. Why Classes Are Used Instead of Functions (IMPORTANT INTERVIEW QUESTION)
+❓ Why not just functions?
+
+You can use functions—but classes are preferred because:
+
+🔹 1. State Management
+
+Load balancers need to track:
+
+current index (round robin)
+active connections
+server health
+
+👉 Example:
+
+this.index
+this.servers
+this.connections
+
+➡️ Functions don’t persist state easily without closures
+
+🔹 2. Encapsulation
+
+Classes group:
+
+data (servers)
+logic (routing)
+
+👉 Cleaner design:
+
+balancer.getNextServer()
+balancer.healthCheck()
+🔹 3. Extensibility (VERY IMPORTANT)
+
+You can extend behavior:
+
+class SmartBalancer extends RoundRobinBalancer {
+  healthCheck() {}
+}
+
+👉 This is how FAANG systems evolve
+
+🔹 4. Reusability
+Multiple instances
+Different configs
+🔹 5. Interview Expectation
+
+Using classes shows:
+
+OOP understanding
+system design thinking
+⚖️ 7. Function vs Class (Quick Comparison)
+Feature	Function	Class
+State	Harder	Easy
+Structure	Loose	Organized
+Extensibility	Limited	Strong
+Interview impact	Basic	Strong
+🧱 8. Real-World Architecture (FAANG Style)
+Client
+   ↓
+Load Balancer (L7)
+   ↓
+API Gateway
+   ↓
+Microservices
+   ↓
+Database / Cache
+🧠 9. Common Interview Questions
+❓ How does load balancer handle failures?
+
+👉 Health checks + failover
+
+❓ Difference between L4 and L7?
+
+👉 L4 = fast, L7 = smart routing
+
+❓ Why consistent hashing?
+
+👉 Minimizes data movement
+
+❓ How to avoid overload?
+
+👉 Rate limiting + auto scaling
+
+❓ Stateless vs Stateful LB?
+Stateless = scalable
+Stateful = sticky sessions
+
+10. Golden One-Liners (Revise Before Interview)
+“Load balancers improve scalability and fault tolerance.”
+“Consistent hashing minimizes cache invalidation.”
+“Least connections works best for uneven workloads.”
+“Health checks ensure high availability.”
+“Sticky sessions hurt scalability.”
+
+
+
+
