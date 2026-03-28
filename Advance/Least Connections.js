@@ -1,3 +1,5 @@
+//// Least Connections Load Balancer (Real-world backend usage)
+
 class LeastConnectionBalancer {
   constructor(servers) {
     this.servers = servers.map((url) => ({
