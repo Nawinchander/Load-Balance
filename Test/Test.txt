@@ -1,0 +1,67 @@
+What does “testing load balancing” actually mean?
+
+When engineers test a load balancer, they’re verifying:
+
+Traffic is evenly distributed
+System doesn’t crash under high load
+Failed servers are handled gracefully
+Latency stays low and stable
+No server is overloaded
+
+Types of Load Testing
+1. Baseline Testing (Normal Load)
+
+👉 Simulate typical user traffic
+
+Example: 1,000 requests/sec
+Goal:
+Are requests evenly distributed?
+Is latency consistent?
+2. Stress Testing (Break the system)
+
+👉 Push beyond limits
+
+Example: 10,000 → 50,000 req/sec
+Goal:
+When does it fail?
+Does one server get overloaded?
+
+Spike Testing (Sudden traffic burst)
+
+👉 Simulate viral traffic
+
+Example:
+1k → 20k req/sec instantly
+Goal:
+Can LB react quickly?
+Does autoscaling work?
+4. Soak Testing (Long duration)
+
+👉 Run for hours/days
+
+Goal:
+Memory leaks?
+Uneven distribution over time?
+
+How they actually test it (Real methods)
+🛠️ 1. Load Testing Tools
+
+Common tools used:
+
+Apache JMeter
+k6 (modern, lightweight)
+Locust (Python-based)
+Gatling
+
+👉 These tools simulate thousands/millions of users
+
+🧠 2. Metrics they monitor
+
+They track:
+
+Requests per second (RPS)
+Latency (p50, p95, p99)
+Error rate
+CPU / memory per server
+
+
