@@ -89,6 +89,23 @@ getServer() {
     );
 }
 
+// Tests:
+
+// Fault tolerance
+// Health check logic
+
+
+
+// Track latency - Add timestamps:
+
+const start = Date.now();
+// after completion
+const latency = Date.now() - start;
+
+// Now you’re testing:
+
+// Performance, not just distribution
+
 
 
 
