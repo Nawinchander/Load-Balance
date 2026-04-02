@@ -64,4 +64,57 @@ Latency (p50, p95, p99)
 Error rate
 CPU / memory per server
 
+Distribution fairness
+
+Example:
+
+Server	Requests handled
+S1	25%
+S2	25%
+S3	25%
+S4	25%
+
+✔️ Good load balancing
+
+Check Load Balancing Algorithms
+
+They verify behavior of:
+
+Round Robin
+Least Connections
+Consistent Hashing
+
+Example test:
+
+Send 1000 requests
+Check if:
+Round Robin → evenly distributed
+Least Conn → favors free servers
+💥 4. Failure Testing (VERY important)
+
+👉 They kill servers intentionally
+
+Shut down 1 backend node
+Observe:
+Does LB stop sending traffic to it?
+Are requests retried?
+
+This is called:
+👉 Chaos Testing / Chaos Engineering
+
+Popular tool:
+
+Chaos Monkey (by Netflix)
+📊 5. Observability (Production-level testing)
+
+They use:
+
+Logs
+Metrics dashboards (Grafana)
+Distributed tracing
+
+To answer:
+
+Where is latency coming from?
+Which node is overloaded?
 
