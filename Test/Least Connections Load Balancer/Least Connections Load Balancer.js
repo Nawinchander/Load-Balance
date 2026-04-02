@@ -66,3 +66,29 @@ setTimeout(() => {
 // ✅ More balanced based on load
 
 // { S1: 28, S2: 35, S3: 37 }
+
+
+/// slow server
+// Make S1 slower
+const processingTime = server.name === "S1" ? 2000 : Math.random() * 1000;
+
+// Expected:
+
+// S1 gets fewer requests over time
+
+// Simulate server failure
+server.isDown = true;
+
+/// modify llb:
+
+getServer() {
+  return this.servers
+    .filter(s => !s.isDown)
+    .reduce((min, server) =>
+      server.activeConnections < min.activeConnections ? server : min
+    );
+}
+
+
+
+
