@@ -7,3 +7,25 @@ This is more realistic because:
 
 Some requests take longer
 Some servers get busy
+
+
+What this test is checking
+
+Instead of equal distribution, you’re testing:
+
+✅ Smart routing
+Requests go to less busy servers
+✅ Dynamic behavior
+Servers with long tasks receive fewer new requests
+✅ Real-world simulation
+Random delays = real API/database variability
+
+Expected Outcome
+
+// Unlike round robin:
+
+// ❌ Not perfectly equal
+// ✅ More balanced based on load
+
+// { S1: 28, S2: 35, S3: 37 }
+

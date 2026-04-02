@@ -58,3 +58,11 @@ setTimeout(() => {
   console.log("Final distribution:", distribution);
 }, 2000);
 
+// Expected Outcome
+
+// Unlike round robin:
+
+// ❌ Not perfectly equal
+// ✅ More balanced based on load
+
+// { S1: 28, S2: 35, S3: 37 }
