@@ -1,0 +1,9 @@
+Least Connections Load Balancer
+
+👉 Idea:
+Instead of sending traffic evenly, send it to the server with the fewest active requests.
+
+This is more realistic because:
+
+Some requests take longer
+Some servers get busy
