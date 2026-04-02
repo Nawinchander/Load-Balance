@@ -81,13 +81,13 @@ server.isDown = true;
 
 /// modify llb:
 
-getServer() {
-  return this.servers
-    .filter(s => !s.isDown)
-    .reduce((min, server) =>
-      server.activeConnections < min.activeConnections ? server : min
-    );
-}
+// getServer() {
+//   return this.servers
+//     .filter(s => !s.isDown)
+//     .reduce((min, server) =>
+//       server.activeConnections < min.activeConnections ? server : min
+//     );
+// }
 
 // Tests:
 
