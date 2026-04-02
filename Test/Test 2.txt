@@ -1,0 +1,13 @@
+Real-world example
+
+Think of:
+
+Netflix
+Amazon
+
+They:
+
+Continuously simulate traffic
+Inject failures
+Monitor distribution globally
+

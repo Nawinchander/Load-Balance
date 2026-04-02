@@ -118,3 +118,16 @@ To answer:
 Where is latency coming from?
 Which node is overloaded?
 
+
+When you answer this in interviews, say:
+
+“I would validate load balancing using a mix of load testing, failure injection, and observability metrics like p99 latency and request distribution.”
+
+Then mention:
+
+Load tools (k6/JMeter)
+Metrics (latency, RPS)
+Failure handling
+Real-time monitoring
+
+
