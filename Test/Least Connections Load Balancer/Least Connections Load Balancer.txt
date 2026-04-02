@@ -29,3 +29,19 @@ Expected Outcome
 
 // { S1: 28, S2: 35, S3: 37 }
 
+Interview-level explanation (use this line)
+
+“I would simulate uneven request durations and validate that a least-connections load balancer dynamically shifts traffic away from overloaded nodes.”
+
+🚀 Why this example is powerful
+
+This shows:
+
+You understand real traffic is uneven
+You think about runtime behavior
+You go beyond textbook round-robin
+
+If you want next level, I can give:
+👉 Consistent hashing test (used in CDNs, caches)
+👉 Weighted load balancing simulation (used in production)
+👉 Or a full system design answer combining LB + autoscaling + health checks

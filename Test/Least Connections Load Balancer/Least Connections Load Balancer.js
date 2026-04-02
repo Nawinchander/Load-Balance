@@ -99,6 +99,7 @@ getServer() {
 // Track latency - Add timestamps:
 
 const start = Date.now();
+
 // after completion
 const latency = Date.now() - start;
 
