@@ -11,3 +11,33 @@ Continuously simulate traffic
 Inject failures
 Monitor distribution globally
 
+Pro-level insight (what most people miss)
+
+👉 Even if traffic is “even,” it can still be bad.
+
+Why?
+
+Requests may have different weights
+One request = simple API
+Another = heavy DB query
+
+So they also test:
+
+✅ Weighted load balancing
+✅ Adaptive load balancing
+
+✔️ Summary
+
+Load balancing is tested by:
+
+Simulating traffic (load tools)
+Measuring distribution + latency
+Breaking servers intentionally
+Observing system behavior
+Validating algorithms
+
+If you want, I can give you:
+👉 A full FAANG-level system design answer
+👉 Or a Node.js + Redis + Nginx real implementation test setup
+
+
